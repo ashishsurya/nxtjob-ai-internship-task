@@ -1,0 +1,1 @@
+# nxtjob-ai-internship-task
