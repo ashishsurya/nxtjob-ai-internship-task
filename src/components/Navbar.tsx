@@ -6,6 +6,7 @@ import { twMerge } from 'tailwind-merge';
 import { Avatar, AvatarFallback } from '@radix-ui/react-avatar';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export const Navbar = () => {
   const router = useRouter();
@@ -40,7 +41,9 @@ export const Navbar = () => {
       </div>
 
       <div className='flex items-center gap-6'>
-        <BsFillBellFill className='w-5 h-6' />
+        <motion.div whileHover={{ scale: 1.2 }} className='cursor-pointer'>
+          <BsFillBellFill className='w-5 h-6' />
+        </motion.div>
         <Avatar className='w-11 h-11 inline-flex items-center justify-center  '>
           <AvatarFallback className='w-full h-full flex items-center justify-center bg-[#57A4F2] font-bold text-white rounded-full'>
             GS
