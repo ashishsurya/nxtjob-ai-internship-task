@@ -17,13 +17,15 @@ export const Navbar = () => {
   return (
     <nav className='px-8 py-6 shadow-md bg-white flex items-center gap-12'>
       <div>
-        <Image
-          src={'/logo.svg'}
-          alt='logo'
-          width={0}
-          height={0}
-          className='h-12 w-36'
-        />
+        <Link href={'/'}>
+          <Image
+            src={'/logo.svg'}
+            alt='logo'
+            width={0}
+            height={0}
+            className='h-12 w-36'
+          />
+        </Link>
       </div>
 
       <div className='flex items-center gap-7 flex-1'>
@@ -52,7 +54,7 @@ export const Navbar = () => {
 const Navlink = ({ href, active }: { href: string; active?: boolean }) => {
   return (
     <Link
-      href={href}
+      href={href === 'job-tracker-and-networking' ? href : '#'}
       className={twMerge(
         'flex items-center gap-3 text-sm text-[#212121]',
         active &&
