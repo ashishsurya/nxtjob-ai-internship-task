@@ -26,7 +26,7 @@ const NewJobForm = () => {
         placeholder='Job Url'
       />
 
-      <Select.Root required>
+      <Select.Root>
         <Select.Trigger className='flex justify-between px-[20px] py-[12px] border rounded-lg items-center  text-[#5a5a5a]'>
           <Select.Value placeholder='Select status' />
           <Select.Icon>
