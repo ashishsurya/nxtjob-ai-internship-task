@@ -7,7 +7,7 @@ const JobSeacrhBar = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className='flex px-[20px] py-[10px] items-center bg-white rounded-lg justify-between'>
+    <div className='flex px-[20px] py-[10px] items-center bg-white rounded-lg justify-between mt-[20px] mr-[20px]'>
       <h3 className='font-semibold'>My 2023 Job Search</h3>
 
       <div className='flex items-stretch gap-[10px]'>

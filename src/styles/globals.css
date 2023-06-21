@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  *::-webkit-scrollbar {
+    display: none;
+  }
   body {
     font-family: system-ui;
-    @apply bg-[#F5F5F5];
+    @apply bg-stone-100;
   }
 }

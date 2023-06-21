@@ -7,7 +7,7 @@ import { AiFillBug } from 'react-icons/ai';
 
 const TabTriggers = () => {
   return (
-    <Tabs.List className='flex flex-col py-[20px] px-[10px] bg-white gap-[10px] rounded-lg'>
+    <Tabs.List className='flex flex-col py-[20px] px-[10px] bg-white gap-[10px] rounded-lg m-[20px] h-fit w-52'>
       <Tabs.Trigger
         value='boards'
         className='p-[10px] data-[state=active]:bg-[#8246FD] data-[state=active]:text-white flex gap-[10px] items-center rounded-lg data-[state=inactive]:hover:bg-[#F5F5F5] duration-200 text-[#212121]'
