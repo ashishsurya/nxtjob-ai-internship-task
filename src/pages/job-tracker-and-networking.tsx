@@ -35,7 +35,7 @@ export default function JobTrackerAndNetworking() {
       <>
         <Tabs.Root
           defaultValue='boards'
-          className='grid grid-flow-col grid-cols-[208px_calc(100vw_-_228px)] gap-[20px]'
+          className='grid grid-flow-col grid-cols-[208px_calc(100vw_-_228px)] gap-[1.25rem]'
         >
           <TabTriggers />
           <TabContent />

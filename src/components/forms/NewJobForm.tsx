@@ -10,24 +10,24 @@ const NewJobForm = () => {
 
   return (
     <form
-      className='flex flex-col gap-[10px]'
+      className='flex flex-col gap-[0.625rem]'
       onSubmit={(e) => e.preventDefault()}
     >
       <input
-        className='focus:outline-none  h-full rounded-lg px-[20px] py-[12px] border w-full'
+        className='focus:outline-none  h-full rounded-lg px-[1.25rem] py-[12px] border w-full'
         placeholder='Company Name'
       />
       <input
-        className='focus:outline-none  h-full rounded-lg px-[20px] py-[12px] border w-full'
+        className='focus:outline-none  h-full rounded-lg px-[1.25rem] py-[12px] border w-full'
         placeholder='Job Title'
       />
       <input
-        className='focus:outline-none  h-full rounded-lg px-[20px] py-[12px] border w-full'
+        className='focus:outline-none  h-full rounded-lg px-[1.25rem] py-[12px] border w-full'
         placeholder='Job Url'
       />
 
       <Select.Root>
-        <Select.Trigger className='flex justify-between px-[20px] py-[12px] border rounded-lg items-center  text-[#5a5a5a]'>
+        <Select.Trigger className='flex justify-between px-[1.25rem] py-[12px] border rounded-lg items-center  text-[#5a5a5a]'>
           <Select.Value placeholder='Select status' />
           <Select.Icon>
             <FiChevronDown />
@@ -40,10 +40,10 @@ const NewJobForm = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className='bg-white top-14 left-0 absolute  p-[10px] w-4/5 shadow-lg rounded-lg border'
+              className='bg-white top-14 left-0 absolute  p-[0.625rem] w-4/5 shadow-lg rounded-lg border'
             >
               <Select.Viewport>
-                <Select.Group className='flex flex-col gap-[10px] items-start'>
+                <Select.Group className='flex flex-col gap-[0.625rem] items-start'>
                   <CustomSelectItem textValue='Saved' value='saved' />
                   <CustomSelectItem
                     textValue='Interviewing'
@@ -56,7 +56,7 @@ const NewJobForm = () => {
         </Select.Portal>
       </Select.Root>
 
-      <div className='flex mt-10 gap-[10px]'>
+      <div className='flex mt-10 gap-[0.625rem]'>
         <button
           className='flex-1 py-4  rounded-lg border'
           onClick={() => dispatch(set(false))}
@@ -81,7 +81,7 @@ const CustomSelectItem = ({
   return (
     <Select.Item
       className={
-        'cursor-pointer w-full p-[10px] data-[state=unchecked]:hover:bg-[#f5f5f5] data-[state=checked]:bg-purple-600 data-[state=checked]:text-white rounded-lg duration-200; text-sm'
+        'cursor-pointer w-full p-[0.625rem] data-[state=unchecked]:hover:bg-[#f5f5f5] data-[state=checked]:bg-purple-600 data-[state=checked]:text-white rounded-lg duration-200; text-sm'
       }
       value={value}
     >
