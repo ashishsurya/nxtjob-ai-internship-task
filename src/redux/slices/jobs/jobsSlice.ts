@@ -25,13 +25,12 @@ export const jobsSlice = createSlice({
           intialStatus: string;
           changedStatus: string;
           jobId: string;
+          status_arr: string[];
         };
       }
     ) => {
-      const { intialStatus, changedStatus, jobId } = action.payload;
-      const {
-        status: { status_arr },
-      } = store.getState();
+      const { intialStatus, changedStatus, jobId,status_arr } = action.payload;
+
       // not performing any action if there is no status corresponding to new status.
       if (status_arr.findIndex((status) => status === changedStatus) === -1) {
         return;

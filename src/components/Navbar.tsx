@@ -61,7 +61,7 @@ const Navlink = ({ href, active }: { href: string; active?: boolean }) => {
       className={twMerge(
         'flex items-center gap-3 text-sm text-[#212121] duration-150',
         active &&
-          'bg-[#F7F3FF] px-[20px] py-[10px] text-[#8246FD] font-bold rounded-lg'
+          'bg-[#F7F3FF] px-[1.25rem] py-[0.625rem] text-[#8246FD] font-bold rounded-lg'
       )}
     >
       <p className='capitalize'>{href.replace('-', ' ')}</p>

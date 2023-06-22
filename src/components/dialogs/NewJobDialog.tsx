@@ -49,7 +49,7 @@ const NewJobDialog = () => {
 
                 <div className='bg-purple-100  relative rounded-lg'>
                   <AiOutlineInfoCircle className='absolute text-purple-700 top-3 left-2' />
-                  <p className='text-[10px] text-[#5a5a5a] p-[10px] pl-[35px]'>
+                  <p className='text-[0.625rem] text-[#5a5a5a] p-[0.625rem] pl-[35px]'>
                     Did yoy know? You can save job directly from our Extension
                     and have all the data imported in a simple click! It takes
                     just a few seconds,

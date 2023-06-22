@@ -8,9 +8,10 @@ import { data } from '@/data/initialData';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { setJobsToRedux } from '@/redux/slices/jobs/jobsSlice';
 import { Job } from '@/types';
+import { resetServerContext } from 'react-beautiful-dnd';
 export default function JobTrackerAndNetworking() {
-  const dispatch = useAppDispatch();
   const { jobs } = useAppSelector((state) => state.jobs);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     // if there is nothing in cache, create
@@ -25,7 +26,10 @@ export default function JobTrackerAndNetworking() {
     dispatch(setJobsToRedux({ jobs: jobsFromCache }));
   }, [dispatch]);
 
-  console.log(jobs);
+  useEffect(() => {
+    console.log('localstorage updated');
+    localStorage.setItem('jobs', JSON.stringify(jobs));
+  }, [jobs]);
 
   return (
     <div className=''>
@@ -35,7 +39,7 @@ export default function JobTrackerAndNetworking() {
       <>
         <Tabs.Root
           defaultValue='boards'
-          className='grid grid-flow-col grid-cols-[208px_calc(100vw_-_228px)] gap-[20px]'
+          className='grid grid-flow-col grid-cols-[208px_calc(100vw_-_228px)] gap-[1.25rem]'
         >
           <TabTriggers />
           <TabContent />
@@ -45,3 +49,11 @@ export default function JobTrackerAndNetworking() {
     </div>
   );
 }
+
+export const getServerSideProps = () => {
+  resetServerContext();
+
+  return {
+    props: {},
+  };
+};
