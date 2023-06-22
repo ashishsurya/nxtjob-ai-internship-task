@@ -1,6 +1,7 @@
 import { twMerge } from 'tailwind-merge';
 import JobCardOptionsDropDown from './drop-downs/JobCardOptionsDropDown';
 import { motion } from 'framer-motion';
+import { Job } from '@/types';
 const JobBoards = () => {
   return (
     <div className=' h-[70vh] w-auto  grid grid-flow-col pl-[20px]  gap-[20px] overflow-scroll '>
@@ -8,7 +9,7 @@ const JobBoards = () => {
       <JobStageColumn title='Applied' />
       <JobStageColumn title='Interviewing' />
       <JobStageColumn title='Offer' />
-      <JobStageColumn title='Rejected' className='bg-red-200' />
+      <JobStageColumn title='Rejected' className='bg-purple-200' />
       <button className='w-80 bg-sky-500/90 h-fit text-white text-center py-[20px] rounded-lg text-xl'>
         + Add New List
       </button>
@@ -18,6 +19,7 @@ const JobBoards = () => {
 
 interface JobStageColumnProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
+  jobs? : Job[]
 }
 
 const JobStageColumn: React.FC<JobStageColumnProps> = ({
@@ -53,11 +55,13 @@ const JobStageColumn: React.FC<JobStageColumnProps> = ({
   );
 };
 
-interface JobCardProps {}
+interface JobCardProps {
+  job?: Job;
+}
 
-const JobCard = () => {
+const JobCard: React.FC<JobCardProps> = ({ job }) => {
   return (
-    <div className='  w-[275px] mr-auto p-[10px] bg-white rounded-lg relative'>
+    <div className='shadow-sm w-[275px] mr-auto p-[10px] bg-white rounded-lg relative'>
       <JobCardOptionsDropDown onDeleteHandle={() => null} />
     </div>
   );
