@@ -14,19 +14,21 @@ export const jobsSlice = createSlice({
   name: 'jobs-slice',
   initialState,
   reducers: {
-    setJobsToRedux: (state, action: { payload: { data: IJobsSLice } }) => {
-      state.jobs = action.payload.data.jobs;
+    setJobsToRedux: (state, action: { payload: IJobsSLice }) => {
+      state.jobs = action.payload.jobs;
     },
 
     changeStatusOfJob: (
       state,
       action: {
         payload: {
-          data: { intialStatus: string; changedStatus: string; jobId: string };
+          intialStatus: string;
+          changedStatus: string;
+          jobId: string;
         };
       }
     ) => {
-      const { intialStatus, changedStatus, jobId } = action.payload.data;
+      const { intialStatus, changedStatus, jobId } = action.payload;
       const {
         status: { status_arr },
       } = store.getState();
@@ -44,8 +46,8 @@ export const jobsSlice = createSlice({
       state.jobs[index].status = changedStatus;
     },
 
-    deleteJob: (state, action: { payload: { data: { jobId: string } } }) => {
-      const { jobId } = action.payload.data;
+    deleteJob: (state, action: { payload: { jobId: string } }) => {
+      const { jobId } = action.payload;
       const index = state.jobs.findIndex((job) => job.id === jobId);
       state.jobs.splice(index, 1);
     },

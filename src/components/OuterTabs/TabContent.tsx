@@ -4,9 +4,9 @@ import * as Tabs from '@radix-ui/react-tabs';
 
 const TabContent = () => {
   return (
-    <div className='w-[80vw] space-y-[20px]  '>
+    <div className='flex-1 space-y-[20px] pl-[20px] '>
       <JobSeacrhBar />
-      <Tabs.Content value='boards' className='flex-1'>
+      <Tabs.Content value='boards' className='flex-1 '>
         <JobBoards />
       </Tabs.Content>
     </div>

@@ -32,7 +32,7 @@ const JobCardOptionsDropDown: React.FC<JobCardOptionsDropDownProps> = ({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className='bg-white w-52 p-[10px] rounded-lg'
+                className='bg-white w-52 py-[2px] rounded-lg shadow-lg'
               >
                 <DropdownMenu.Item asChild>
                   <motion.button

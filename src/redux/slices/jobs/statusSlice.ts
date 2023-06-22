@@ -12,8 +12,8 @@ export const statusSlice = createSlice({
   name: 'status-slice',
   initialState,
   reducers: {
-    addNewStatus: (state, action: { payload: { data: string } }) => {
-      state.status_arr.push(action.payload.data);
+    addNewStatus: (state, action: { payload: string }) => {
+      state.status_arr.push(action.payload);
     },
   },
 });
