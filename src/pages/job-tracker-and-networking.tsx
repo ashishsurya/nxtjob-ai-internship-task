@@ -10,8 +10,7 @@ import { setJobsToRedux } from '@/redux/slices/jobs/jobsSlice';
 import { Job } from '@/types';
 import { resetServerContext } from 'react-beautiful-dnd';
 
-
-export const runtime = "edge"
+export const runtime = 'experimental-edge';
 
 export default function JobTrackerAndNetworking() {
   const { jobs } = useAppSelector((state) => state.jobs);
@@ -36,7 +35,7 @@ export default function JobTrackerAndNetworking() {
   }, [jobs]);
 
   return (
-    <div className=''>
+    <>
       <Head>
         <title>Job Tracker and Networking - NxtJob.ai</title>
       </Head>
@@ -50,7 +49,7 @@ export default function JobTrackerAndNetworking() {
         </Tabs.Root>
       </>
       <NewJobDialog />
-    </div>
+    </>
   );
 }
 
