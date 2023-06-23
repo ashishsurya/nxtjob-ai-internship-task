@@ -9,6 +9,10 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { setJobsToRedux } from '@/redux/slices/jobs/jobsSlice';
 import { Job } from '@/types';
 import { resetServerContext } from 'react-beautiful-dnd';
+
+
+export const runtime = "edge"
+
 export default function JobTrackerAndNetworking() {
   const { jobs } = useAppSelector((state) => state.jobs);
   const dispatch = useAppDispatch();
