@@ -1,14 +1,14 @@
-import { RxDragHandleDots2 } from 'react-icons/rx';
 import { Job } from '@/types';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Draggable } from 'react-beautiful-dnd';
 import { BiBuildingHouse } from 'react-icons/bi';
+import { RxDragHandleDots2 } from 'react-icons/rx';
 import { twMerge } from 'tailwind-merge';
-import CoverLetterDropDown from '../drop-downs/CoverLetterDropDown';
-import DocumentMatchDropDown from '../drop-downs/DocumentMatchDropDown';
-import InterviewDropDown from '../drop-downs/InterviewDropDown';
-import JobCardOptionsDropDown from '../drop-downs/JobCardOptionsDropDown';
-import Image from 'next/image';
+import CoverLetterPopover from '../popovers/CoverLetterPopover';
+import DocumentMatchPopover from '../popovers/DocumentMatchPopover';
+import InterviewPopover from '../popovers/InterviewPopover';
+import JobCardOptionsPopover from '../popovers/JobCardOptionsPopover';
 
 interface JobCardProps {
   job: Job;
@@ -22,17 +22,18 @@ const JobCard: React.FC<JobCardProps> = ({ job, index }) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 0.5 } }}
+          whileDrag={{ scale: 1.2 }}
           ref={provided.innerRef}
           {...provided.draggableProps}
           className={twMerge(
             'shadow-sm w-[275px] mr-auto p-[0.625rem] bg-white rounded-lg relative flex flex-col gap-[0.625rem] pl-[2rem]',
             snapshot.isDragging && 'shadow-lg '
-          )} 
+          )}
         >
           <div className='absolute left-2' {...provided.dragHandleProps}>
-            <RxDragHandleDots2 className='text-slate-600'/>
+            <RxDragHandleDots2 className='text-slate-600' />
           </div>
-          <JobCardOptionsDropDown onDeleteHandle={() => null} />
+          <JobCardOptionsPopover onDeleteHandle={() => null} />
           {job?.isSavedByLoop && (
             <div className='flex gap-[0.625rem] items-center'>
               <p className='text-sky-400 text-xs font-bold'>Saved by Loop</p>
@@ -60,9 +61,9 @@ const JobCard: React.FC<JobCardProps> = ({ job, index }) => {
           </div>
 
           <div className='flex items-center gap-[0.625rem]'>
-            <DocumentMatchDropDown percentage={75} />
-            <CoverLetterDropDown />
-            <InterviewDropDown percentage={job?.mockInterViewPercentage || 0} />
+            <DocumentMatchPopover percentage={75} />
+            <CoverLetterPopover />
+            <InterviewPopover percentage={job?.mockInterViewPercentage || 0} />
           </div>
         </motion.div>
       )}
