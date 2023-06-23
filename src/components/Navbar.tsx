@@ -64,7 +64,7 @@ const Navlink = ({ href, active }: { href: string; active?: boolean }) => {
           'bg-[#F7F3FF] px-[1.25rem] py-[0.625rem] text-[#8246FD] font-bold rounded-lg'
       )}
     >
-      <p className='capitalize'>{href.replace('-', ' ')}</p>
+      <p className='capitalize'>{href.replaceAll('-', ' ')}</p>
       <RiArrowDropDownLine />
     </Link>
   );

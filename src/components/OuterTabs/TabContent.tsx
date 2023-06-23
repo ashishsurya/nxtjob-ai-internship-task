@@ -1,4 +1,4 @@
-import JobBoards from '../JobBoards';
+import JobBoards from '../KanbanJobBoard/JobBoards';
 import JobSeacrhBar from '../JobSeacrhBar';
 import * as Tabs from '@radix-ui/react-tabs';
 
