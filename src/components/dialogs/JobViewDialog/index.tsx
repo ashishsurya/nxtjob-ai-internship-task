@@ -13,6 +13,8 @@ import { BiBuildingHouse } from 'react-icons/bi';
 import JobViewTimeLine from './JobViewTimeLine';
 import Triggers from './Tabs/Triggers';
 import Content from './Tabs/Content';
+import { twMerge } from 'tailwind-merge';
+import { font } from '@/pages/_app';
 
 const JobViewDialog = () => {
   const { open } = useAppSelector((state) => state.jobViewDialog);
@@ -38,7 +40,7 @@ const JobViewDialog = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className='w-4/5 h-[90%] overflow-auto  top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2 rounded-lg  bg-white focus:outline-none flex flex-col'
+                className={twMerge('w-4/5 h-[90%] overflow-auto  top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2 rounded-lg  bg-white focus:outline-none flex flex-col !font-sans', font.variable)}
               >
                 <Dialog.Close asChild>
                   <motion.button

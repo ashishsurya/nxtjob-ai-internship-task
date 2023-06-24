@@ -5,6 +5,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import NewJobForm from '../forms/NewJobForm';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
+import { twMerge } from 'tailwind-merge';
+import { font } from '@/pages/_app';
 
 const NewJobDialog = () => {
   const isOpen = useAppSelector((state) => state.newJobDialog.open);
@@ -34,7 +36,7 @@ const NewJobDialog = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className='w-[500px] bg-white top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2 p-10 flex flex-col gap-[40px] rounded-lg shadow-lg '
+                className={twMerge('w-[500px] bg-white top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2 p-10 flex flex-col gap-[40px] rounded-lg shadow-lg font-sans', font.variable)}
               >
                 <div className='flex flex-col items-center gap-[6px]'>
                   <h2 className=' text-3xl font-semibold'>Add job</h2>
