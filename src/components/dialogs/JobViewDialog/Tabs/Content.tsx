@@ -1,12 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-import { FC, useState } from 'react';
-import * as Tabs from '@radix-ui/react-tabs';
-import { motion } from 'framer-motion';
-import { MdModeEdit, MdModeEditOutline } from 'react-icons/md';
+import { FC } from 'react';
 import { twMerge } from 'tailwind-merge';
+
+import JobCardOptionsPopover from '@/components/popovers/JobCardOptionsPopover';
+import NPCStatusPopover from '@/components/popovers/NPCStatusPopover';
 import Image from 'next/image';
-import Link from 'next/link';
-import { BiSearch } from 'react-icons/bi';
 import {
   BsChatSquareTextFill,
   BsFillExclamationTriangleFill,
@@ -15,15 +13,12 @@ import {
   TbCircleArrowLeftFilled,
   TbCircleArrowRightFilled,
 } from 'react-icons/tb';
-import NPCStatusPopover from '@/components/popovers/NPCStatusPopover';
-import JobCardOptionsPopover from '@/components/popovers/JobCardOptionsPopover';
-import { AiOutlineCaretDown } from 'react-icons/ai';
-import { IoDocumentTextOutline } from 'react-icons/io5';
-import { RiDeleteBin6Line } from 'react-icons/ri';
-import JobDescription from '../jobDescription';
 import CompanyDetails from '../CompanyDetails';
 import NetworkDetails from '../NetworkDetails';
 import Notes from '../Notes';
+import JobDescription from '../jobDescription';
+
+import JobDescriptionEditorToolbar from '../JobDescriptionEditorToolbar';
 
 interface ContentProps {}
 
@@ -94,7 +89,7 @@ export const NetworkProfileCard = ({
 export const FormattedText = ({ isEditing }: { isEditing: boolean }) => {
   return (
     <div className={twMerge(isEditing && 'bg-white px-5 rounded-lg mt-5')}>
-      {isEditing && <div></div>}
+      {isEditing && <JobDescriptionEditorToolbar />}
       <p className='mt-5 mb-[0.625rem] font-medium'>About the job</p>
       <p
         className={twMerge(
