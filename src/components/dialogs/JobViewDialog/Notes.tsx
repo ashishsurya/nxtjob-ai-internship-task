@@ -1,12 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as Tabs from '@radix-ui/react-tabs';
-import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState, useTransition } from 'react';
 import { IoDocumentTextOutline } from 'react-icons/io5';
 import { MdModeEditOutline } from 'react-icons/md';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 
-
 const Notes = () => {
+  const [_, startTransition] = useTransition();
   const [isEditing, setIsEditing] = useState(false);
   const [noteInput, setNoteInput] = useState('');
   const [notes, setNotes] = useState<
@@ -34,15 +35,18 @@ const Notes = () => {
             onSubmit={(e) => {
               e.preventDefault();
 
-              setNotes((prev) => [
-                {
-                  id: new Date().toISOString(),
-                  note: noteInput,
-                  createdAt: new Date().toString(),
-                },
-                ...prev,
-              ]);
+              startTransition(() => {
+                setNotes((prev) => [
+                  {
+                    id: new Date().toISOString(),
+                    note: noteInput,
+                    createdAt: new Date().toString(),
+                  },
+                  ...prev,
+                ]);
 
+                setNoteInput('');
+              });
               setIsEditing(false);
             }}
             className='flex flex-col gap-[0.625rem]'
@@ -87,20 +91,36 @@ const Notes = () => {
         )}
 
         {notes.length > 0 && !isEditing && (
-          <div>
-            {notes.map((note) => (
-              <div key={note.id} className='p-4 bg-white flex flex-col gap-5 rounded-lg shadow-md'>
-                <p>{note.note}</p>
-                <hr />
-                <div className='flex items-center justify-between'>
-                  <p>few seconds ago</p>
-                  <div className='flex items-center gap-4'>
-                    <MdModeEditOutline className='w-5 h-5 text-primary-2' />
-                    <RiDeleteBin6Line className='w-5 h-5 text-red-500' />
+          <div className='space-y-5 '>
+            <AnimatePresence>
+              {notes.map((note) => (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  key={note.id}
+                  className='p-4 bg-white flex flex-col gap-5 rounded-lg shadow-md'
+                >
+                  <p className='whitespace-pre'>{note.note}</p>
+                  <hr />
+                  <div className='flex items-center justify-between'>
+                    <p>few seconds ago</p>
+                    <div className='flex items-center gap-4'>
+                      <MdModeEditOutline className='w-5 h-5 text-primary-2' />
+                      <button
+                        onClick={() => {
+                          setNotes((prev) =>
+                            prev.filter((n) => n.id !== note.id)
+                          );
+                        }}
+                      >
+                        <RiDeleteBin6Line className='w-5 h-5 text-red-500' />
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
         )}
       </div>
@@ -108,4 +128,4 @@ const Notes = () => {
   );
 };
 
-export default Notes
+export default Notes;
