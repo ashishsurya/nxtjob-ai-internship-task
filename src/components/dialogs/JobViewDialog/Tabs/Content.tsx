@@ -16,9 +16,9 @@ import {
 import CompanyDetails from '../CompanyDetails';
 import NetworkDetails from '../NetworkDetails';
 import Notes from '../Notes';
-import JobDescription from '../jobDescription';
 
 import JobDescriptionEditorToolbar from '../JobDescriptionEditorToolbar';
+import JobDescription from '../JobDescription';
 
 interface ContentProps {}
 
