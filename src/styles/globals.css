@@ -16,7 +16,7 @@
     @apply bg-stone-100 text-[#212121];
   }
 
-  button {
+/*   button {
     @apply font-bold
-  }
+  } */
 }
