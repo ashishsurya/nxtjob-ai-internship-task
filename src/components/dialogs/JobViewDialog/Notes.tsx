@@ -22,12 +22,13 @@ const Notes = () => {
       <div className='p-5 space-y-5'>
         <div className='flex justify-between  items-center'>
           <h3 className='font-bold text-lg'>Notes</h3>
-          <button
+          <motion.button
+            whileHover={{ scaleX: 1.1 }}
             onClick={() => setIsEditing(true)}
             className='font-bold bg-primary-3 text-white text-sm px-8 rounded-lg py-2'
           >
             Create New Note
-          </button>
+          </motion.button>
         </div>
 
         {isEditing && (
@@ -66,12 +67,13 @@ const Notes = () => {
               >
                 Cancel
               </button>
-              <button
+              <motion.button
+                whileHover={{ scaleX: 1.1 }}
                 type='submit'
                 className='bg-primary-3 px-8 py-[0.375rem] rounded-lg text-white'
               >
                 Save
-              </button>
+              </motion.button>
             </div>
           </form>
         )}

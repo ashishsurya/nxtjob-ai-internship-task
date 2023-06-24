@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { MdModeEdit } from 'react-icons/md';
 import { twMerge } from 'tailwind-merge';
 
-
 const CompanyDetails = () => {
   const [isEditing, setIsEditing] = useState(false);
 
@@ -65,15 +64,18 @@ const CompanyDetails = () => {
         </div>
         <div className={twMerge(isEditing && 'flex flex-col')}>
           {isEditing ? (
-            <textarea
-              rows={3}
-              className='p-5 text-sm focus:outline-none border rounded-lg'
-              placeholder='Pixster Studio offers a complete array of Mobile & Web-based
-            services ranging from development of iOS, Android, and Web
-            applications all the way to front-end and back-end website
-            solutions. We’ve more than 15 products and satisfied clients all
-            around the world.'
-            ></textarea>
+            <div className='space-y-2'>
+              <p className='font-medium '>Description</p>
+              <textarea
+                rows={3}
+                className='p-5 text-sm focus:outline-none border rounded-lg w-full'
+                placeholder='Pixster Studio offers a complete array of Mobile & Web-based
+          services ranging from development of iOS, Android, and Web
+          applications all the way to front-end and back-end website
+          solutions. We’ve more than 15 products and satisfied clients all
+          around the world.'
+              ></textarea>
+            </div>
           ) : (
             <p className=''>
               Pixster Studio offers a complete array of Mobile & Web-based
@@ -92,7 +94,7 @@ const CompanyDetails = () => {
           )}
         >
           <div>
-            <p className='font-bold'>Website</p>
+            <p className='font-medium text-sm'>Website</p>
             {isEditing ? (
               <input
                 className='px-4 py-3 text-sm rounded-lg w-full focus:outline-none border'
@@ -109,7 +111,7 @@ const CompanyDetails = () => {
           </div>
 
           <div>
-            <p className='font-bold'>Industry</p>
+            <p className='font-medium'>Industry</p>
             {isEditing ? (
               <input
                 type='text'
@@ -129,7 +131,7 @@ const CompanyDetails = () => {
           )}
         >
           <div>
-            <p className='font-bold'>Employee Count</p>
+            <p className='font-medium'>Employee Count</p>
             {isEditing ? (
               <input
                 className='px-4 py-3 text-sm rounded-lg w-full focus:outline-none border'
@@ -141,7 +143,7 @@ const CompanyDetails = () => {
           </div>
 
           <div>
-            <p className='font-bold'>Address</p>
+            <p className='font-medium'>Address</p>
             {isEditing ? (
               <input
                 type='text'
@@ -157,6 +159,5 @@ const CompanyDetails = () => {
     </Tabs.Content>
   );
 };
-
 
 export default CompanyDetails;

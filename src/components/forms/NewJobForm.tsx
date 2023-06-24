@@ -49,6 +49,9 @@ const NewJobForm = () => {
                     textValue='Interviewing'
                     value='interviewing'
                   />
+                  <CustomSelectItem textValue='Applied' value='applied' />
+                  <CustomSelectItem textValue='Offer' value='offer' />
+                  <CustomSelectItem textValue='Rejected' value='rejected' />
                 </Select.Group>
               </Select.Viewport>
             </motion.div>
@@ -71,7 +74,7 @@ const NewJobForm = () => {
   );
 };
 
-const CustomSelectItem = ({
+export const CustomSelectItem = ({
   value,
   textValue,
 }: {

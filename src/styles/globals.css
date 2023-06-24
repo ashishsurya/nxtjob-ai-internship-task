@@ -15,4 +15,8 @@
     font-family: system-ui;
     @apply bg-stone-100 text-[#212121];
   }
+
+  button {
+    @apply font-bold
+  }
 }
