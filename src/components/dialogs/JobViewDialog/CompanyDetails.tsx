@@ -43,7 +43,7 @@ const CompanyDetails = () => {
 
         <div className='flex items-center gap-5'>
           <Image
-            src={'/company.png'}
+            src={'/company.svg'}
             width={72}
             height={72}
             alt='ui-ux.jpeg'

@@ -47,7 +47,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, index }) => {
           <div className='flex  gap-[0.625rem] items-center'>
             <div>
               <Image
-                src={'/job-card-logo.png'}
+                src={'/job-card-logo.svg'}
                 alt='company-logo'
                 width={24}
                 height={24}

@@ -13,7 +13,7 @@ const JobViewDialogHeader = () => {
     <div className='flex justify-between items-start p-10 pb-5'>
       <div className='flex gap-[0.625rem]'>
         <Image
-          src={'/company.png'}
+          src={'/company.svg'}
           alt='company-logo'
           width={72}
           height={72}
