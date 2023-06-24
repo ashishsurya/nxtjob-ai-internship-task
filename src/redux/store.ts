@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import newJobDialogSliceReducer from './slices/dialogs/newJobDialogSlice';
+import newJobDialogReducer from './slices/dialogs/newJobDialogSlice';
 import jobsReducer from './slices/jobs/jobsSlice';
 import statusReducer from './slices/jobs/statusSlice';
+import jobViewDialogReducer from './slices/dialogs/jobViewDiologSlice';
 
 export const store = configureStore({
   reducer: {
-    newJobDialog: newJobDialogSliceReducer,
+    newJobDialog: newJobDialogReducer,
     jobs: jobsReducer,
     status: statusReducer,
+    jobViewDialog: jobViewDialogReducer,
   },
 });
 

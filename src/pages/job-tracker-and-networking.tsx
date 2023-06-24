@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { setJobsToRedux } from '@/redux/slices/jobs/jobsSlice';
 import { Job } from '@/types';
 import { resetServerContext } from 'react-beautiful-dnd';
+import JobViewDialog from '@/components/dialogs/JobViewDialog';
 
 export const runtime = 'experimental-edge';
 
@@ -49,6 +50,7 @@ export default function JobTrackerAndNetworking() {
         </Tabs.Root>
       </>
       <NewJobDialog />
+      <JobViewDialog />
     </>
   );
 }

@@ -39,13 +39,14 @@ const InterviewPopover = ({ percentage }: { percentage: number }) => {
                   <div className='bg-white p-[0.625rem] rounded-lg focus:outline-none flex flex-col gap-[0.625rem] border border-slate-300 shadow-lg'>
                     <div className='flex justify-between items-center'>
                       <p className='text-[#212121]'>Mock Interview</p>
-                      <motion.button
-                        whileHover={{ rotate: 90 }}
-                        whileFocus={{ rotate: 90 }}
-                        onClick={() => setOpen(false)}
-                      >
-                        <GrClose className='w-4 h-4 ' />
-                      </motion.button>
+                      <Popover.Close asChild>
+                        <motion.button
+                          whileHover={{ rotate: 90 }}
+                          whileFocus={{ rotate: 90 }}
+                        >
+                          <GrClose className='w-4 h-4 ' />
+                        </motion.button>
+                      </Popover.Close>
                     </div>
                     <div className='grid grid-cols-2 gap-2'>
                       <input

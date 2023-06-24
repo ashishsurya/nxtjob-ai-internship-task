@@ -6,8 +6,13 @@
   *::-webkit-scrollbar {
     display: none;
   }
+
+  * {
+    @apply focus:outline-none;
+  }
+
   body {
     font-family: system-ui;
-    @apply bg-stone-100;
+    @apply bg-stone-100 text-[#212121];
   }
 }

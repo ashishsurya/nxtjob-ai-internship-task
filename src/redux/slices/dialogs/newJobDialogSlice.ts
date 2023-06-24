@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface NewJobDialogSlice {
+export interface ModalStateInterface {
   open: boolean;
 }
 
-const initialState: NewJobDialogSlice = {
+const initialState: ModalStateInterface = {
   open: false,
 };
 

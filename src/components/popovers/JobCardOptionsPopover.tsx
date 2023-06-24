@@ -3,13 +3,16 @@ import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { AiOutlineMore } from 'react-icons/ai';
 import { RiDeleteBin6Line } from 'react-icons/ri';
+import { twMerge } from 'tailwind-merge';
 
 interface JobCardOptionsPopoverProps {
   onDeleteHandle: () => void;
+  className?: string;
 }
 
 const JobCardOptionsPopover: React.FC<JobCardOptionsPopoverProps> = ({
   onDeleteHandle,
+  className,
 }) => {
   const [dDOpen, setDDOpen] = useState(false);
 
@@ -19,7 +22,10 @@ const JobCardOptionsPopover: React.FC<JobCardOptionsPopoverProps> = ({
         <motion.div
           whileFocus={{ scaleY: 1.2 }}
           whileHover={{ scaleY: 1.2 }}
-          className='absolute top-2 right-2 cursor-pointer'
+          className={twMerge(
+            'absolute top-2 right-2 cursor-pointer',
+            className
+          )}
         >
           <AiOutlineMore className='w-5 h-5' />
         </motion.div>

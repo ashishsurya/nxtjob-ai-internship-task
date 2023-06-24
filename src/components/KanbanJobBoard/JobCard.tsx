@@ -9,6 +9,8 @@ import CoverLetterPopover from '../popovers/CoverLetterPopover';
 import DocumentMatchPopover from '../popovers/DocumentMatchPopover';
 import InterviewPopover from '../popovers/InterviewPopover';
 import JobCardOptionsPopover from '../popovers/JobCardOptionsPopover';
+import { useAppDispatch } from '@/redux/hooks';
+import { openJobViewDialog } from '@/redux/slices/dialogs/jobViewDiologSlice';
 
 interface JobCardProps {
   job: Job;
@@ -16,6 +18,7 @@ interface JobCardProps {
 }
 
 const JobCard: React.FC<JobCardProps> = ({ job, index }) => {
+  const dispatch = useAppDispatch();
   return (
     <Draggable draggableId={job.id} index={index}>
       {(provided, snapshot) => (
@@ -26,7 +29,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, index }) => {
           ref={provided.innerRef}
           {...provided.draggableProps}
           className={twMerge(
-            'shadow-sm w-[275px] mr-auto p-[0.625rem] bg-white rounded-lg relative flex flex-col gap-[0.625rem] pl-[2rem]',
+            'shadow-sm w-[275px] mr-auto p-[0.625rem] bg-white rounded-lg relative flex flex-col gap-[0.625rem] pl-[2rem] ',
             snapshot.isDragging && 'shadow-lg '
           )}
         >
@@ -51,7 +54,10 @@ const JobCard: React.FC<JobCardProps> = ({ job, index }) => {
               />
             </div>
 
-            <div className='flex flex-col'>
+            <div
+              className='flex flex-col cursor-pointer'
+              onClick={() => dispatch(openJobViewDialog())}
+            >
               <p className='text-sm'>UI/UX Designer</p>
               <div className='flex gap-[0.625rem] items-center'>
                 <BiBuildingHouse className='w-4 h-3' />
