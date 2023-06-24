@@ -47,9 +47,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, index }) => {
           <div className='flex  gap-[0.625rem] items-center'>
             <div>
               <Image
-                src={
-                  'https://s3-alpha-sig.figma.com/img/0b44/51e2/78ca988981c3a99827eac8007830a0e2?Expires=1688342400&Signature=GgzBGrJpkcV-~MMrf6zrz-Atwd7V5s1QG2KrbhERYYfMaTYqrX-vP0wC99HUFof~otEeBNg~c~VCMkYv5eFcIAvjUTZU7hHwgljc38CrFWKnxP5h0pnVGFxupopXbhDPwJGSrGjd0swwwi0~mX0vGPYwEtqlhqq5toopuFev6iAS6THghpraT7ehIaoQZ5rWrltMFMtkaRogmhWNpixv9w8hiEtE3Xwy2ZucwIfNw-Gap6BzciWsyk9IjUgsCrW5MClSArxywdxkyVxnXVGLTZAlMF6IBV0rpQa3JM1akE5cBwhQAAEUNI-8R4KsMuu~2KEPPe8DjGggEzzWmJxYHg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'
-                }
+                src={'/job-card-logo.png'}
                 alt='company-logo'
                 width={24}
                 height={24}

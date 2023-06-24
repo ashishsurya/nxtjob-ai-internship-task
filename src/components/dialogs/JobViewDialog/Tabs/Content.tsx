@@ -43,7 +43,7 @@ export const NetworkProfileCard = ({
       <div className='flex gap-[0.625rem]'>
         <Image
           src={
-            'https://s3-alpha-sig.figma.com/img/bc72/8fce/c257d16f160f465b6040ab776c26e60d?Expires=1688342400&Signature=a582w~ahk6jAuVo-p9hgKcOQoX1OQd90WlEAq7ZV0i7yaYqsugmJ1NdletqGgQx82GJVYSth-OybDWo52nPSMO5T5n~1ObsYPWXcNeAJChBbkLD-SNypZgwgKFgUJijo~IkUtkjXV33FAhfObP71FOPJYExwMSyBu8my1dtul--TocIdTWC~CCpLgj~PE~-7zgtZcDhoo-rx1smz-~gCORPhv9hnmQlCMPkDV1vMF4RN-rmegFQLtX2eg32ytFsop3cGjLdGCfbNl3MHGLm7W7thD3fuq4tGr6~ci9qDwic6s2wGiZkvjY0NSg3yogz8GLD51ZNALDOD640oc~XRoA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'
+            '/avatar.svg'
           }
           alt='avatar'
           width={40}
