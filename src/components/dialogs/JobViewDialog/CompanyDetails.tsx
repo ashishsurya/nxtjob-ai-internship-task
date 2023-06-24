@@ -43,7 +43,9 @@ const CompanyDetails = () => {
 
         <div className='flex items-center gap-5'>
           <Image
-            src={'/ui-ux.jpeg'}
+            src={
+              'https://s3-alpha-sig.figma.com/img/5f63/22c6/d353690d0a1e53a64afa0d896b780f3a?Expires=1688342400&Signature=f1xYirUHLpOvNbe47KEOqQh-Z433vwiNBqSL48jcoDKZmdO~ADF5Hpwbs6o9Rxeo~32ca-4QUYW~5xX28V33~BX8O8p7z96lVlLKiiAU3cqaXD4Ph8IPr6r9bTTKcGBTGWd6Ewl3f0zZQ215M9hhkIHOoBHp7NIZBym81uoAOY7nHaVePFA0BFlHww-do8~dPIsrMF88dsihcmU1OkTB2rgGQS1AabPYkfahdYNM5P69wB~rphSJHCSyDCECi1f7QQJq5j~CtyBPoiNhiVYZg-OAgp7z0ZtRSvImv029B~OCnW56QRr58nHHWq4pJ4dRQmADIvPNi3A0w27AiedwbA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'
+            }
             width={72}
             height={72}
             alt='ui-ux.jpeg'
